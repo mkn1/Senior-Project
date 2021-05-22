@@ -1,0 +1,185 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/Minecraft.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/pixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GUI/TimeBar.gd" type="Script" id=4]
+[ext_resource path="res://GUI/Score.gd" type="Script" id=5]
+[ext_resource path="res://GUI/Pause.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Tilemap.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GUI/HealthBar.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/SpawnPoints.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2.5, 163.01 )
+
+[node name="World" type="Node"]
+
+[node name="Tilemap" parent="." instance=ExtResource( 7 )]
+tile_data = PoolIntArray( -524298, 12, 0, -524297, 7, 0, -524296, 7, 0, -524295, 7, 0, -524294, 7, 0, -524293, 7, 0, -524292, 7, 0, -524291, 7, 0, -524290, 7, 0, -524289, 7, 0, -589824, 7, 0, -589823, 7, 0, -589822, 7, 0, -589821, 7, 0, -589820, 7, 0, -589819, 7, 0, -589818, 7, 0, -589817, 7, 0, -589816, 7, 0, -589815, 5, 0, -458762, 0, 0, -458761, 9, 0, -458760, 9, 0, -458759, 9, 0, -458758, 9, 0, -458757, 9, 0, -458756, 9, 0, -458755, 9, 0, -458754, 9, 0, -458753, 9, 0, -524288, 9, 0, -524287, 9, 0, -524286, 9, 0, -524285, 9, 0, -524284, 9, 0, -524283, 9, 0, -524282, 9, 0, -524281, 9, 0, -524280, 9, 0, -524279, 4, 0, -393226, 0, 0, -393225, 9, 0, -393224, 9, 0, -393223, 9, 0, -393222, 6, 0, -393221, 6, 0, -393220, 6, 0, -393219, 6, 0, -393218, 6, 0, -393217, 6, 0, -458752, 6, 0, -458751, 10, 0, -458750, 6, 0, -458749, 6, 0, -458748, 6, 0, -458747, 6, 0, -458746, 6, 0, -458745, 6, 0, -458744, 9, 0, -458743, 4, 0, -327690, 0, 0, -327689, 9, 0, -327688, 9, 0, -327687, 9, 0, -327686, 6, 0, -327685, 6, 0, -327684, 6, 0, -327683, 6, 0, -327682, 6, 0, -327681, 6, 0, -393216, 10, 0, -393215, 10, 0, -393214, 6, 0, -393213, 6, 0, -393212, 6, 0, -393211, 6, 0, -393210, 6, 0, -393209, 6, 0, -393208, 9, 0, -393207, 4, 0, -262154, 0, 0, -262153, 9, 0, -262152, 9, 0, -262151, 6, 0, -262150, 6, 0, -262149, 6, 0, -262148, 6, 0, -262147, 6, 0, -262146, 10, 0, -262145, 10, 0, -327680, 10, 0, -327679, 10, 0, -327678, 10, 0, -327677, 6, 0, -327676, 6, 0, -327675, 6, 0, -327674, 6, 0, -327673, 6, 0, -327672, 9, 0, -327671, 4, 0, -196618, 0, 0, -196617, 9, 0, -196616, 9, 0, -196615, 6, 0, -196614, 6, 0, -196613, 6, 0, -196612, 10, 0, -196611, 6, 0, -196610, 10, 0, -196609, 6, 0, -262144, 10, 0, -262143, 10, 0, -262142, 10, 0, -262141, 10, 0, -262140, 10, 0, -262139, 10, 0, -262138, 6, 0, -262137, 6, 0, -262136, 9, 0, -262135, 4, 0, -131082, 0, 0, -131081, 9, 0, -131080, 9, 0, -131079, 6, 0, -131078, 6, 0, -131077, 10, 0, -131076, 10, 0, -131075, 10, 0, -131074, 10, 0, -131073, 9, 0, -196608, 10, 0, -196607, 10, 0, -196606, 10, 0, -196605, 10, 0, -196604, 10, 0, -196603, 10, 0, -196602, 6, 0, -196601, 6, 0, -196600, 9, 0, -196599, 4, 0, -65546, 0, 0, -65545, 9, 0, -65544, 9, 0, -65543, 6, 0, -65542, 6, 0, -65541, 10, 0, -65540, 10, 0, -65539, 10, 0, -65538, 10, 0, -65537, 9, 0, -131072, 10, 0, -131071, 10, 0, -131070, 10, 0, -131069, 10, 0, -131068, 10, 0, -131067, 10, 0, -131066, 6, 0, -131065, 6, 0, -131064, 9, 0, -131063, 4, 0, -10, 0, 0, -9, 9, 0, -8, 9, 0, -7, 6, 0, -6, 6, 0, -5, 10, 0, -4, 10, 0, -3, 10, 0, -2, 10, 0, -1, 10, 0, -65536, 10, 0, -65535, 10, 0, -65534, 10, 0, -65533, 10, 0, -65532, 10, 0, -65531, 10, 0, -65530, 6, 0, -65529, 6, 0, -65528, 9, 0, -65527, 4, 0, 65526, 0, 0, 65527, 9, 0, 65528, 9, 0, 65529, 6, 0, 65530, 6, 0, 65531, 10, 0, 65532, 10, 0, 65533, 10, 0, 65534, 10, 0, 65535, 10, 0, 0, 10, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 10, 0, 6, 6, 0, 7, 6, 0, 8, 9, 0, 9, 4, 0, 131062, 0, 0, 131063, 9, 0, 131064, 9, 0, 131065, 6, 0, 131066, 6, 0, 131067, 10, 0, 131068, 9, 0, 131069, 10, 0, 131070, 10, 0, 131071, 10, 0, 65536, 10, 0, 65537, 10, 0, 65538, 10, 0, 65539, 10, 0, 65540, 10, 0, 65541, 10, 0, 65542, 6, 0, 65543, 6, 0, 65544, 9, 0, 65545, 4, 0, 196598, 0, 0, 196599, 9, 0, 196600, 9, 0, 196601, 9, 0, 196602, 6, 0, 196603, 10, 0, 196604, 10, 0, 196605, 10, 0, 196606, 10, 0, 196607, 10, 0, 131072, 10, 0, 131073, 10, 0, 131074, 10, 0, 131075, 10, 0, 131076, 10, 0, 131077, 10, 0, 131078, 6, 0, 131079, 6, 0, 131080, 9, 0, 131081, 4, 0, 262134, 0, 0, 262135, 9, 0, 262136, 9, 0, 262137, 6, 0, 262138, 6, 0, 262139, 10, 0, 262140, 10, 0, 262141, 10, 0, 262142, 10, 0, 262143, 10, 0, 196608, 10, 0, 196609, 10, 0, 196610, 10, 0, 196611, 10, 0, 196612, 10, 0, 196613, 10, 0, 196614, 6, 0, 196615, 6, 0, 196616, 9, 0, 196617, 4, 0, 327670, 0, 0, 327671, 9, 0, 327672, 9, 0, 327673, 9, 0, 327674, 6, 0, 327675, 10, 0, 327676, 10, 0, 327677, 10, 0, 327678, 10, 0, 327679, 10, 0, 262144, 10, 0, 262145, 10, 0, 262146, 10, 0, 262147, 10, 0, 262148, 10, 0, 262149, 10, 0, 262150, 10, 0, 262151, 6, 0, 262152, 9, 0, 262153, 4, 0, 393206, 0, 0, 393207, 9, 0, 393208, 9, 0, 393209, 9, 0, 393210, 6, 0, 393211, 10, 0, 393212, 10, 0, 393213, 10, 0, 393214, 10, 0, 393215, 10, 0, 327680, 10, 0, 327681, 9, 0, 327682, 10, 0, 327683, 10, 0, 327684, 10, 0, 327685, 10, 0, 327686, 6, 0, 327687, 6, 0, 327688, 9, 0, 327689, 4, 0, 458742, 0, 0, 458743, 9, 0, 458744, 9, 0, 458745, 9, 0, 458746, 6, 0, 458747, 6, 0, 458748, 6, 0, 458749, 6, 0, 458750, 6, 0, 458751, 6, 0, 393216, 6, 0, 393217, 6, 0, 393218, 10, 0, 393219, 6, 0, 393220, 6, 0, 393221, 10, 0, 393222, 10, 0, 393223, 10, 0, 393224, 9, 0, 393225, 4, 0, 524278, 0, 0, 524279, 9, 0, 524280, 9, 0, 524281, 9, 0, 524282, 9, 0, 524283, 9, 0, 524284, 9, 0, 524285, 9, 0, 524286, 9, 0, 524287, 9, 0, 458752, 9, 0, 458753, 9, 0, 458754, 9, 0, 458755, 9, 0, 458756, 9, 0, 458757, 9, 0, 458758, 9, 0, 458759, 9, 0, 458760, 9, 0, 458761, 4, 0, 589814, 1, 0, 589815, 2, 0, 589816, 2, 0, 589817, 2, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 3, 0, 655441, 1, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
+position = Vector2( -0.117653, -7.17223 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+pause_mode = 1
+scale = Vector2( 0.944682, 0.944682 )
+current = true
+zoom = Vector2( 0.444, 0.48 )
+
+[node name="Health" type="ColorRect" parent="."]
+margin_left = -149.881
+margin_top = -132.292
+margin_right = -75.8811
+margin_bottom = -124.292
+color = Color( 0, 0, 0, 0.627451 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="ColorRect" parent="Health"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 73.0
+margin_bottom = 7.0
+color = Color( 0.870588, 0.133333, 0.133333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="ColorRect" parent="."]
+margin_left = -149.881
+margin_top = -122.292
+margin_right = -75.8811
+margin_bottom = -114.292
+color = Color( 0, 0, 0, 0.627451 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="ColorRect" parent="Time"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 73.0
+margin_bottom = 7.0
+color = Color( 0.176471, 0.882353, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+visible = false
+margin_left = -160.0
+margin_top = -134.0
+margin_right = -80.0
+margin_bottom = -53.0
+rect_scale = Vector2( 4.01438, 3.30702 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackOverlay" type="ColorRect" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spawner" type="Node2D" parent="."]
+z_index = -20
+script = ExtResource( 10 )
+
+[node name="SpawnPoints" type="Node2D" parent="Spawner"]
+
+[node name="Spawner" type="Node2D" parent="Spawner/SpawnPoints"]
+position = Vector2( -180.533, -39.2862 )
+
+[node name="Spawner2" type="Node2D" parent="Spawner/SpawnPoints"]
+position = Vector2( 23.5944, -170.236 )
+
+[node name="Spawner3" type="Node2D" parent="Spawner/SpawnPoints"]
+position = Vector2( 188.282, 15.7812 )
+
+[node name="Spawner4" type="Node2D" parent="Spawner/SpawnPoints"]
+position = Vector2( -16.1337, 168.798 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 46.5026
+margin_top = -141.0
+margin_right = 111.503
+margin_bottom = -125.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.647059, 0.647059, 0.647059, 1 )
+custom_colors/font_color_shadow = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+text = "Score: 0"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -149.0
+margin_top = 120.878
+margin_right = -7.0
+margin_bottom = 136.878
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 2 )
+text = "Press R to restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Walls"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/KinematicBody2D"]
+position = Vector2( -160, 0 )
+shape = SubResource( 3 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="Walls"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/KinematicBody2D2"]
+position = Vector2( 160.463, 1.12245 )
+shape = SubResource( 3 )
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="Walls"]
+position = Vector2( -13.8215, 15.2716 )
+rotation = 1.5708
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/KinematicBody2D3"]
+position = Vector2( -158.999, -12.681 )
+shape = SubResource( 3 )
+
+[node name="KinematicBody2D4" type="KinematicBody2D" parent="Walls"]
+position = Vector2( -13.8215, 303.183 )
+rotation = 1.5708
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/KinematicBody2D4"]
+position = Vector2( -158.999, -12.681 )
+shape = SubResource( 3 )
+
+[connection signal="player_stats_changed" from="Player" to="Health" method="_on_Player_player_stats_changed"]
+[connection signal="player_stats_changed" from="Player" to="Time" method="_on_Player_player_stats_changed"]
